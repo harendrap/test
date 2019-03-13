@@ -2,13 +2,7 @@
   "posts": [
     {
       "id": 1,
-      "type": "AssignmentGroup",
-      "text": "Enterprise-IT-Service"
-    },
-    {
-      "id": 2,
-      "type": "AssignmentGroup",
-      "text": "Helpdesk"
+      "title": "hello"
     }
   ],
   "profile": {
