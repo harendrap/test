@@ -1,0 +1,26 @@
+## Housekeeping-docker
+# Kill stale conatiners and cached nwetwork
+docker rm -f $(docker ps -aq)
+docker network prune
+
+update chaincode-fabcar(~\go\src\github.com\fabric-samples\chaincode\fabcar\javascript\lib\fabcar.js)
+
+#Install dependencies, Here javascript using npm for build
+cd ~/go/src/github.com/fabric-samples/fabcar/javascript
+npm install
+
+# clean old identities in wallet; launch network; create channel and join peers to channel; deploy chaincode on each peer, approve and call init method
+../startFabric.sh javscript  or ~/go/src/github.com/fabric-samples/fabcar/startFabric.sh javascript
+
+# Enroll the admin user, and import the new identity into the wallet
+node enrollAdmin.js
+	#Wallet path: ~/go/src/github.com/fabric-samples/fabcar/javascript/wallet
+	# Successfully enrolled admin user "admin" and imported it into the wallet
+
+
+#Register the user, enroll the user, and import the new identity into the wallet.
+node registerUser.js
+	
+	#Successfully registered and enrolled admin user "appUser" and imported it into the wallet
+
+
