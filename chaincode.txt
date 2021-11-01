@@ -12,6 +12,8 @@ npm install
 # clean old identities in wallet; launch network; create channel and join peers to channel; deploy chaincode on each peer, approve and call init method
 ../startFabric.sh javscript  or ~/go/src/github.com/fabric-samples/fabcar/startFabric.sh javascript
 
+#check couchdb on localhost:5984/_utils  and user=admin and pwd=adminpw
+
 # Enroll the admin user, and import the new identity into the wallet
 node enrollAdmin.js
 	#Wallet path: ~/go/src/github.com/fabric-samples/fabcar/javascript/wallet
