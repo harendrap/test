@@ -1,9 +1,11 @@
 ## Housekeeping-docker
 # Kill stale conatiners and cached nwetwork
 docker rm -f $(docker ps -aq)
-docker network prune
+docker network prune or docker system prube
 
-update chaincode-fabcar(~\go\src\github.com\fabric-samples\chaincode\fabcar\javascript\lib\fabcar.js)
+#Using fabcar template from fabric-samples
+
+#update chaincode-fabcar(~\go\src\github.com\fabric-samples\chaincode\fabcar\javascript\lib\fabcar.js)
 
 #Install dependencies, Here javascript using npm for build
 cd ~/go/src/github.com/fabric-samples/fabcar/javascript
@@ -25,4 +27,10 @@ node registerUser.js
 	
 	#Successfully registered and enrolled admin user "appUser" and imported it into the wallet
 
+#copy monitordocker.sh from commercial paper(config/cli) tutorial. This script to watch docker 
 
+#create gateway and submit transaction. Gateway(wallet+user) connects to the network->channel->smart contract. Then it can submit transaction - update ledger via stub.putState(key,obj)
+node invoke.js
+
+#query all vax or particular vax by its unique key. Calling evaluate transaction using gateway. Chaincode uses stub.getState(key)
+node query.js
